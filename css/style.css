@@ -23,8 +23,19 @@ main {
 }
 
 .square {
+    cursor: grab;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+}
+
+.safe{
+    background-color: #16166D;
+    color: white;
+}
+
+.unsafe{
+    background-color: red;
+    color: white;
 }

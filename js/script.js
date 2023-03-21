@@ -17,12 +17,12 @@ const levelForm = document.getElementById('levelForm');
 levelForm.addEventListener('submit', play);
 
 //disegna le celle
-function drawSquare(index, numSquares) {
+function drawSquare(content, numSquares) {
     const square = document.createElement('div');
     square.classList.add('square');
     square.style.width = `calc(100% / ${numSquares})`;
     square.style.height = `calc(100% / ${numSquares})`;
-    square.innerHTML = index;
+    square.innerHTML = content;
     return square;
 }
 
@@ -54,6 +54,9 @@ function play(e) {
     //per il numero di celle genero la cella
     for (let i = 1; i <= squareNumbers; i++) {
         const square = drawSquare(i, squareForRow);
+        square.addEventListener('click', function(){
+            square.classList.add('safe');
+        });
         playground.appendChild(square);
     }
 }
